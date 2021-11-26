@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - House
+  - CoinedHouse
+  - Hive
+  - Trap
+  - Mouth
   layers:
   - Default
   - TransparentFX

@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4019179928351380508}
   - component: {fileID: 4487101549787948821}
+  - component: {fileID: 3707294966249451840}
+  - component: {fileID: 3675573653080372940}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Mouth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +84,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3707294966249451840
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867726178514050365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &3675573653080372940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867726178514050365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dd37d275f1a0b45a1a21ea7ca62cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: 0
+  nocoin: 0
+  enemy: 0
+  hive1: 0
+  hive0: 0
+  trap: 0
 --- !u!1 &8315253810499290686
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,12 +129,13 @@ GameObject:
   - component: {fileID: 8315253810499290681}
   - component: {fileID: 8315253810499290680}
   - component: {fileID: 8315253810499290687}
+  - component: {fileID: 757524029879521389}
   - component: {fileID: 8315253810499290682}
   - component: {fileID: 8315253810499290683}
   - component: {fileID: 1017099519943389743}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +219,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &757524029879521389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315253810499290686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297470e1f0d2dcf4ba760eef6bea8660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  node: {fileID: 3675573653080372940}
 --- !u!114 &8315253810499290682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +314,19 @@ MonoBehaviour:
     m_ActionId: 71ce8e0e-6708-44b0-b951-6da2014c9b74
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 757524029879521389}
+        m_TargetAssemblyTypeName: Actioning, Assembly-CSharp
+        m_MethodName: Reaction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cddf9c22-ff5c-4479-bb55-46b8f18d9dad
     m_ActionName: Player1/Take[/Keyboard/enter]
   - m_PersistentCalls:
