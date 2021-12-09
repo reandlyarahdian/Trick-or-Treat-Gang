@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public bool coin = false, nocoin = false, enemy = false, hive1 = false, hive0 = false, trap = false;
+    public bool coin = false, enemy = false, hive1 = false, hive0 = false, trap = false;
     public Flower flower;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
             case "CoinedHouse":
-                flower = collision.gameObject.GetComponent<Flower>();
                 coin = true;
-                break;
-            case "House":
                 flower = collision.gameObject.GetComponent<Flower>();
-                nocoin = true;
                 break;
             case "Hive":
                 if(collision.name == "Hive 0")
@@ -31,8 +27,8 @@ public class Node : MonoBehaviour
                 enemy = true;
                 break;
             case "Trap":
-                flower = collision.gameObject.GetComponent<Flower>();
                 trap = true;
+                flower = collision.gameObject.GetComponent<Flower>();
                 break;
             default:
                 break;
@@ -42,7 +38,6 @@ public class Node : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         coin = false;
-        nocoin = false;
         enemy = false;
         hive1 = false;
         hive0 = false;

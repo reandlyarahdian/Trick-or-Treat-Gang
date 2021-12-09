@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text timer, point0, point1;
 
     void Start()
-    {
+    { 
 
     }
 

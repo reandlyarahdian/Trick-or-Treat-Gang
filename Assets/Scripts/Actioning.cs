@@ -6,7 +6,16 @@ using UnityEngine.InputSystem;
 
 public class Actioning : MonoBehaviour
 {
-    public Node node;
+    private Node node;
+
+    private void Start()
+    {
+        if(node == null)
+        {
+            node = GetComponentInChildren<Node>();
+        }
+    }
+
     public void Reaction(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -14,10 +23,6 @@ public class Actioning : MonoBehaviour
             if (node.coin)
             {
                 coin(node.flower);
-            }
-            else if (node.nocoin)
-            {
-                nocoin(node.flower);
             }
             else if (node.hive0)
             {
@@ -55,20 +60,12 @@ public class Actioning : MonoBehaviour
         }
     }
 
-    private void nocoin(Flower flower)
-    {
-        StartCoroutine(flower.cooldownFlower());
-        Debug.Log("Zero");
-    }
-
     private void coin(Flower flower)
     {
         StartCoroutine(flower.cooldownFlower());
-        Debug.Log("Plus 1");
     }
     public void trap(Flower flower)
     {
         StartCoroutine(flower.cooldownFlower());
-        Debug.Log("Trap");
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Flower : MonoBehaviour
 {
     [SerializeField] PointSO one, two, three, four;
-    int point;
+    public int point;
     [SerializeField] Transform flower;
     SpriteRenderer sprite;
     [SerializeField]
@@ -46,25 +46,25 @@ public class Flower : MonoBehaviour
 
     void FlowerOne()
     {
-        sprite.color = one.color;
+        sprite.sprite = one.sprite;
         point = one.point;
         flower.tag = one.taging;
     }
     void FlowerTwo()
     {
-        sprite.color = two.color;
+        sprite.sprite = two.sprite;
         point = two.point;
         flower.tag = two.taging;
     }
     void FlowerThree()
     {
-        sprite.color = three.color;
+        sprite.sprite = three.sprite;
         point = three.point;
         flower.tag = three.taging;
     }
     void FlowerCooldown()
     {
-        sprite.color = four.color;
+        sprite.sprite = four.sprite;
         point = four.point;
         flower.tag = four.taging;
         seconds = four.seconds;

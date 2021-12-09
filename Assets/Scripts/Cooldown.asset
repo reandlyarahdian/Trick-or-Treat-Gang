@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ece5c7709b0b6841841fad826aeed3a, type: 3}
   m_Name: Cooldown
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: 7366617892383084551, guid: 1f4048c11816ec24383c7c5959e1f0c1, type: 3}
   point: 0
   taging: House
   seconds: 10
